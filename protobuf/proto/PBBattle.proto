@@ -1,0 +1,84 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+package PBBattle;
+
+enum RightOpType
+{
+	noop = 0;//没有操作
+	attack = 1;//攻击
+
+}
+
+message BattleUserInfo{
+	required int32 uid = 1;
+	required int32 battleID = 2;
+	required int32 roleID = 3;
+}
+
+message TcpEnterBattle
+{
+	required int32 randSeed = 1;
+	repeated BattleUserInfo battleUserInfo = 2;
+}
+
+message UdpBattleReady
+{	
+	required int32 uid = 1;
+	required int32 battleID = 2;
+}
+
+message UdpBattleStart
+{	
+
+}
+
+message PlayerOperation
+{
+	required int32 battleID = 1;
+	required int32 move = 2;
+	optional int32 operationID = 3;//操作id
+	optional RightOpType rightOperation = 4;
+	optional int32 operationValue1 = 5;
+	optional int32 operationValue2 = 6;
+}
+
+message UdpUpPlayerOperations
+{
+	required int32 mesID = 1;
+	required PlayerOperation operation = 2;
+}
+
+message AllPlayerOperation
+{
+	repeated PlayerOperation operations = 1;
+}
+
+message UdpDownFrameOperations
+{
+	required int32 frameID = 1;
+	required AllPlayerOperation operations = 2;
+}
+
+message UdpUpDeltaFrames
+{
+	required int32 battleID = 1;
+	repeated int32 frames = 2;
+}
+
+message UdpDownDeltaFrames
+{
+	repeated UdpDownFrameOperations framesData =1;
+}
+
+message UdpUpGameOver
+{
+	required int32 battleID = 1;
+}
+
+message UdpDownGameOver
+{
+
+}
+

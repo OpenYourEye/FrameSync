@@ -1,0 +1,43 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+package PBCommon;
+
+enum CSID{
+	TCP_LOGIN = 1;						//TcpLogin
+
+	TCP_REQUEST_MATCH = 10;				//TcpRequestMatch
+	TCP_CANCEL_MATCH = 11;				//TcpCancelMatch
+
+	UDP_BATTLE_READY = 51;				//UdpBattleReady
+	UDP_UP_PLAYER_OPERATIONS = 53;		//UdpUpPlayerOperations
+	UDP_UP_DELTA_FRAMES = 55;			//UdpUpDeltaFrames
+	UDP_UP_GAME_OVER = 57;				//UdpUpGameOver
+}
+
+enum SCID{
+	TCP_RESPONSE_LOGIN = 1;				//TcpResponseLogin
+
+	TCP_RESPONSE_REQUEST_MATCH = 10;	//TcpResponseRequestMatch
+	TCP_RESPONSE_CANCEL_MATCH = 11;		//TcpResponseCancelMatch
+
+	TCP_ENTER_BATTLE = 50;				//TcpEnterBattle
+	UDP_BATTLE_START = 51;				//UdpBattleStart
+	UDP_DOWN_FRAME_OPERATIONS = 53;		//UdpDownFrameOperations
+	UDP_DOWN_DELTA_FRAMES = 55;			//UdpDownDeltaFrames
+	UDP_DOWN_GAME_OVER = 57;			//UdpDownGameOver
+}
+
+enum TeamType
+{
+	NO = 0;
+	TEAM1 = 1;
+	TEAM2 = 2;
+	TEAM3 = 3;
+	TEAM4 = 4;
+}
+
+
+
+

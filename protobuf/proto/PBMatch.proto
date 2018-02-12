@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+option optimize_for = LITE_RUNTIME;
+
+package PBMatch;
+
+message TcpRequestMatch{
+	required int32 uid = 1;
+	required int32 roleID = 2;
+}
+
+message TcpCancelMatch{
+	required int32 uid = 1;
+}
+
+message TcpResponseRequestMatch{
+
+}
+
+message TcpResponseCancelMatch{
+	
+}
