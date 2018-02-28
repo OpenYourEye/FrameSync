@@ -47,11 +47,17 @@ class UdpDownGameOver;
 
 enum RightOpType {
   noop = 0,
-  attack = 1
+  rop1 = 1,
+  rop2 = 2,
+  rop3 = 3,
+  rop4 = 4,
+  rop5 = 5,
+  rop6 = 6,
+  rop7 = 7
 };
 bool RightOpType_IsValid(int value);
 const RightOpType RightOpType_MIN = noop;
-const RightOpType RightOpType_MAX = attack;
+const RightOpType RightOpType_MAX = rop7;
 const int RightOpType_ARRAYSIZE = RightOpType_MAX + 1;
 
 // ===================================================================

@@ -7,7 +7,13 @@ package PBBattle;
 enum RightOpType
 {
 	noop = 0;//没有操作
-	attack = 1;//攻击
+	rop1 = 1;//操作1
+	rop2 = 2;//操作2
+	rop3 = 3;//操作3
+	rop4 = 4;//操作4
+	rop5 = 5;//操作5
+	rop6 = 6;//操作6
+	rop7 = 7;//操作7
 
 }
 

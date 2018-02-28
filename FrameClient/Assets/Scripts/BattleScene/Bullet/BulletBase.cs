@@ -6,7 +6,7 @@ public class BulletBase : MonoBehaviour {
 	[HideInInspector]
 	public ShapeBase objShape;
 
-	private int owerID;
+//	private int owerID;
 	public int speed;
 	public int life;
 	private int curLife;
@@ -15,7 +15,7 @@ public class BulletBase : MonoBehaviour {
 	private GameVector2 logicSpeed;
 	public void InitData(int _owerID,int _id,GameVector2 _logicPos,int _moveDir){
 
-		owerID = _owerID;
+//		owerID = _owerID;
 
 		objShape = GetComponent<ShapeBase> ();
 		objShape.InitSelf (ObjectType.bullet,_id);

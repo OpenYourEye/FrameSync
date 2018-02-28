@@ -295,8 +295,26 @@ namespace PBBattle
       [global::ProtoBuf.ProtoEnum(Name=@"noop", Value=0)]
       noop = 0,
             
-      [global::ProtoBuf.ProtoEnum(Name=@"attack", Value=1)]
-      attack = 1
+      [global::ProtoBuf.ProtoEnum(Name=@"rop1", Value=1)]
+      rop1 = 1,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"rop2", Value=2)]
+      rop2 = 2,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"rop3", Value=3)]
+      rop3 = 3,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"rop4", Value=4)]
+      rop4 = 4,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"rop5", Value=5)]
+      rop5 = 5,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"rop6", Value=6)]
+      rop6 = 6,
+            
+      [global::ProtoBuf.ProtoEnum(Name=@"rop7", Value=7)]
+      rop7 = 7
     }
   
 }

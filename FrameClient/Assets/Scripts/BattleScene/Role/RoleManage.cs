@@ -77,7 +77,7 @@ public class RoleManage:MonoBehaviour {
 				if (BattleData.Instance.IsValidRightOp(item.battleID,item.operationID)) {
 					//操作有效
 					switch (item.rightOperation) {
-					case RightOpType.attack:
+					case RightOpType.rop1:
 						{
 							dic_role [item.battleID].Logic_NormalAttack ();
 						}

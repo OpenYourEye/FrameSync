@@ -30,7 +30,7 @@ public class MarsClickBtn : MonoBehaviour {
 			//普通攻击
 			RoleBase _role = BattleCon.Instance.roleManage.GetRoleFromBattleID (BattleData.Instance.battleID);
 			if (_role.IsCloudAttack()) {
-				BattleData.Instance.UpdateRightOperation (PBBattle.RightOpType.attack,0,0);	
+				BattleData.Instance.UpdateRightOperation (PBBattle.RightOpType.rop1,0,0);	
 			}
 		}
 		else if (gameObject.tag.Equals("BtnGameOver")) {
