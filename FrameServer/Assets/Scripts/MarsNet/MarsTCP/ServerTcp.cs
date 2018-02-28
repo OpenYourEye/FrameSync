@@ -47,7 +47,7 @@ public class ServerTcp {
 
 			serverSocket.Bind(new IPEndPoint(ip, ServerConfig.servePort));  //绑定IP地址：端口  
 			serverSocket.Listen(20);    //设定最多10个排队连接请求  
-			Debug.Log("启动监听" + serverSocket.LocalEndPoint.ToString() + "成功");  
+			LogManage.Instance.AddLog("启动监听" + serverSocket.LocalEndPoint.ToString() + "成功");
 			isRun = true;
 
 			//通过Clientsoket发送数据  
@@ -55,7 +55,7 @@ public class ServerTcp {
 			myThread.Start();  	
 
 		} catch (Exception ex) {
-			Debug.Log ("服务器启动失败:" + ex.Message);
+			LogManage.Instance.AddLog ("服务器启动失败:" + ex.Message);
 		}    
 	}
 
@@ -73,7 +73,7 @@ public class ServerTcp {
 				Thread receiveThread = new Thread(ReceiveMessage);  
 				receiveThread.Start(clientSocket);  	
 			} catch (Exception ex) {
-				Debug.Log ("监听失败:" + ex.Message);
+				LogManage.Instance.AddLog ("监听失败:" + ex.Message);
 			}
 		}  
 	}  
@@ -98,7 +98,7 @@ public class ServerTcp {
 				serverSocket = null;	
 			}	
 		} catch (Exception ex) {
-			Debug.Log ("tcp服务器关闭失败:" + ex.Message);
+			LogManage.Instance.AddLog("tcp服务器关闭失败:" + ex.Message);
 		}
 
 	}
@@ -112,7 +112,7 @@ public class ServerTcp {
 				dic_clientSocket.Remove (_socketIp);
 			}	
 		} catch (Exception ex) {
-			Debug.Log ("关闭客户端..." + ex.Message);
+			LogManage.Instance.AddLog ("关闭客户端..." + ex.Message);
 		}
 
 	}
@@ -131,7 +131,7 @@ public class ServerTcp {
 		Socket myClientSocket = (Socket)clientSocket;  
 		string _socketIp = myClientSocket.RemoteEndPoint.ToString().Split(':')[0]; 
 
-		Debug.Log ("有客户端连接:" + _socketIp);
+		LogManage.Instance.AddLog ("有客户端连接:" + _socketIp);
 
 		dic_clientSocket[_socketIp] = myClientSocket;	
 
@@ -142,7 +142,7 @@ public class ServerTcp {
 		{  
 			try  
 			{  
-//				Debug.Log("_socketName是否连接:" + myClientSocket.Connected);
+//				LogManage.Instance.AddLog("_socketName是否连接:" + myClientSocket.Connected);
 				//通过clientSocket接收数据  
 				if (myClientSocket.Poll(1000,SelectMode.SelectRead)) {
 					throw new Exception("客户端关闭了1~");
@@ -166,7 +166,7 @@ public class ServerTcp {
 			}  
 			catch(Exception ex)  
 			{  
-				Debug.Log("接收客户端数据异常:" + ex.Message);  
+				LogManage.Instance.AddLog("接收客户端数据异常:" + ex.Message);  
 
 				_flag = false;
 				break;  
@@ -183,7 +183,7 @@ public class ServerTcp {
 					item.Value.Send (_mes);
 				}	
 			} catch (Exception ex) {
-				Debug.Log ("发数据给所有人异常:" + ex.Message);
+				LogManage.Instance.AddLog ("发数据给所有人异常:" + ex.Message);
 			}	
 		}
 	}
@@ -193,7 +193,7 @@ public class ServerTcp {
 			try {
 				dic_clientSocket [_socketName].Send (_mes);	
 			} catch (Exception ex) {
-				Debug.Log ("发数据给异常:" + ex.Message);
+				LogManage.Instance.AddLog ("发数据给异常:" + ex.Message);
 			}	
 		}
 

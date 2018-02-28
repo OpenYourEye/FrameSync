@@ -145,7 +145,7 @@ public class BattleCon {
 			}
 
 			if (_allData) {
-				UnityEngine.Debug.Log ("战斗服务器:收到全部玩家的第一次操作数据....");
+				LogManage.Instance.AddLog ("战斗服务器:收到全部玩家的第一次操作数据....");
 				frameNum = 1;
 
 				isFinishBS = true;
@@ -154,7 +154,7 @@ public class BattleCon {
 			Thread.Sleep (500);
 		}
 
-		UnityEngine.Debug.Log ("开始发送帧数据～～～～");
+		LogManage.Instance.AddLog ("开始发送帧数据～～～～");
 
 		while (_isRun) {
 			UdpDownFrameOperations _dataPb = new UdpDownFrameOperations ();
@@ -181,12 +181,12 @@ public class BattleCon {
 			Thread.Sleep (ServerConfig.frameTime);
 		}
 
-		UnityEngine.Debug.Log ("帧数据发送线程结束.....................");
+		LogManage.Instance.AddLog ("帧数据发送线程结束.....................");
 	}
 
 	public void UpdatePlayerOperation(PlayerOperation _operation,int _mesNum){
 		int _index = _operation.battleID - 1;
-		//		Debug.Log ("收到玩家操作:" + _index + "," + _mesNum + "," + playerMesNum [_index]);
+		//		LogManage.Instance.AddLog ("收到玩家操作:" + _index + "," + _mesNum + "," + playerMesNum [_index]);
 		if (_mesNum > playerMesNum [_index]) {
 			frameOperation [_index] = _operation;
 			playerMesNum [_index] = _mesNum;
@@ -211,7 +211,7 @@ public class BattleCon {
 		}
 
 		if (allGameOver) {
-//			UnityEngine.Debug.Log ("战斗即将结束咯......");
+			//			LogManage.Instance.AddLog ("战斗即将结束咯......");
 			_isRun = false;
 
 			finishTime = 2000f;
@@ -222,12 +222,12 @@ public class BattleCon {
 	}
 
 	void WaitClientFinish(object snder){
-//		UnityEngine.Debug.Log ("等待客户端结束～");
+		//		LogManage.Instance.AddLog ("等待客户端结束～");
 		finishTime -= 1000f;
 		if (finishTime <= 0) {
 			waitBattleFinish.Dispose ();
 			FinishBattle ();
-//			UnityEngine.Debug.Log ("战斗结束咯......");
+			//			LogManage.Instance.AddLog ("战斗结束咯......");
 		}
 	}
 

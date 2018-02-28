@@ -36,7 +36,7 @@ public class UdpManager {
 	void CreatUdp(){
 		_udpClient = new UdpClient (ServerConfig.udpRecvPort);
 		IPEndPoint _localip = (IPEndPoint)_udpClient.Client.LocalEndPoint;
-		Debug.Log ("udp端口:" + _localip.Port);
+		LogManage.Instance.AddLog ("udp端口:" + _localip.Port);
 		recvPort = _localip.Port;
 	}
 

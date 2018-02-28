@@ -5,5 +5,5 @@ public class ServerConfig {
 
 	public const int frameTime = 66;
 
-	public const int battleUserNum = 1;//战斗需要的人数
+	public static int battleUserNum = 1;//战斗需要的人数
 }

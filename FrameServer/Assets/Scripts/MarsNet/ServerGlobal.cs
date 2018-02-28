@@ -66,6 +66,7 @@ public class ServerUpdate : MonoBehaviour
 
 	void OnApplicationQuit ()
 	{
+		LogManage.Instance.Destory ();
 		ServerTcp.Instance.EndServer ();
 		BattleManage.Instance.Destroy ();
 	}

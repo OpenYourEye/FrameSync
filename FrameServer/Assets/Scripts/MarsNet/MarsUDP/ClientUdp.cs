@@ -20,7 +20,7 @@ public class ClientUdp {
 	public void StartClientUdp(string _ip,int _uid){
 
 		if (sendEndPort != null) {
-			Debug.Log ("客户端udp已经启动~");
+			LogManage.Instance.AddLog ("客户端udp已经启动~");
 			return;
 		}
 
@@ -48,7 +48,7 @@ public class ClientUdp {
 			}
 			delegate_analyze_message = null;	
 		} catch (Exception ex) {
-			Debug.Log ("udp连接关闭异常:" + ex.Message);
+			LogManage.Instance.AddLog ("udp连接关闭异常:" + ex.Message);
 		}
 
 	}
@@ -62,9 +62,9 @@ public class ClientUdp {
 			try {
 				sendClient.Send (_mes,_mes.Length,sendEndPort);	
 //				GameData.Instance().sendNum+=_mes.Length;
-//				Debug.Log("发送量:" + _mes.Length.ToString() + "," + GameData.Instance().sendNum.ToString());
+				//				LogManage.Instance.AddLog("发送量:" + _mes.Length.ToString() + "," + GameData.Instance().sendNum.ToString());
 			} catch (Exception ex) {
-				Debug.Log ("udp发送失败:" + ex.Message);
+				LogManage.Instance.AddLog ("udp发送失败:" + ex.Message);
 			}
 
 		}
@@ -87,7 +87,7 @@ public class ClientUdp {
 				byte[] buf = sendClient.Receive(ref endpoint);
 
 				if (sendEndPort == null) {
-					Debug.Log("接收客户端udp信息:" + endpoint.Port);
+					LogManage.Instance.AddLog("接收客户端udp信息:" + endpoint.Port);
 					sendPortNum = endpoint.Port;
 				}
 
@@ -101,12 +101,12 @@ public class ClientUdp {
 
 				//是客户端,统计接收量
 //				GameData.Instance().recvNum+=buf.Length;
-//				Debug.Log("发送量:" + buf.Length.ToString() + "," + GameData.Instance().recvNum.ToString());
+				//				LogManage.Instance.AddLog("发送量:" + buf.Length.ToString() + "," + GameData.Instance().recvNum.ToString());
 			} catch (Exception ex) {
-				Debug.Log ("udpClient接收数据异常:" + ex.Message);
+				LogManage.Instance.AddLog ("udpClient接收数据异常:" + ex.Message);
 			}
 		}
-		Debug.Log ("udp接收线程退出~~~~~");
+		LogManage.Instance.AddLog ("udp接收线程退出~~~~~");
 	}
 
 

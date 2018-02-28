@@ -45,13 +45,13 @@ public class BattleManage {
 
 		dic_battles [battleID] = _battle;
 
-		UnityEngine.Debug.Log ("开始战斗。。。。。" + battleID);	
+		LogManage.Instance.AddLog ("开始战斗。。。。。" + battleID);	
 	}
 
 
 	public void FinishBattle(int _battleID){
 		dic_battles.Remove (_battleID);
-		UnityEngine.Debug.Log ("战斗结束。。。。。" + _battleID);
+		LogManage.Instance.AddLog ("战斗结束。。。。。" + _battleID);
 	}
 
 
