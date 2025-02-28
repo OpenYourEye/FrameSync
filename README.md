@@ -17,3 +17,7 @@ FrameClient是客户端的demo
 没有做的(功能比较简单，需要的自己实现就好了)  
 抗udp丢包：使用冗余包，具体冗余包几个，需要检测网络状况来进行动态调整，比较省流量  
 抗网络抖动：使用后模拟，不建议使用帧缓存，帧缓存会加大操作延迟  
+
+定点数物理引擎:
+Box2DSharp:https://github.com/jeason1997/Box2DSharp   C#版Box2D物理引擎，github上有一个定点数分支
+一个基于C#的3D定点数物理引擎：https://github.com/sam-vdp/bepuphysics1int
