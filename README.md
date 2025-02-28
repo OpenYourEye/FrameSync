@@ -21,3 +21,11 @@ FrameClient是客户端的demo
 定点数物理引擎:  
 Box2DSharp:https://github.com/jeason1997/Box2DSharp   C#版Box2D物理引擎，github上有一个定点数分支  
 一个基于C#的3D定点数物理引擎：https://github.com/sam-vdp/bepuphysics1int  
+
+定点数寻路:  
+https://github.com/labbbirder/DecimalNavigation  
+
+定点数:https://github.com/asik/FixedMath.Net  
+
+KCP是一个快速可靠协议，能以比 TCP 浪费 10%-20% 的带宽的代价，换取平均延迟降低 30%-40%，且最大延迟降低三倍的传输效果。纯算法实现，并不负责底层协议（如UDP）的收发，需要使用者自己定义下层数据包的发送方式，以 callback的方式提供给 KCP。 连时钟都需要外部传递进来，内部不会有任何一次系统调用  
+C#版。线程安全，运行时无alloc，对gc无压力:https://github.com/KumoKyaku/kcp
