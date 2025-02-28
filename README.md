@@ -20,7 +20,9 @@ FrameClient是客户端的demo
 
 定点数物理引擎:  
 Box2DSharp:https://github.com/jeason1997/Box2DSharp   C#版Box2D物理引擎，github上有一个定点数分支  
-一个基于C#的3D定点数物理引擎：https://github.com/sam-vdp/bepuphysics1int  
+一个基于C#的3D定点数物理引擎:   
+https://github.com/sam-vdp/bepuphysics1int  
+https://github.com/bepu/bepuphysics2  
 
 定点数寻路:  
 https://github.com/labbbirder/DecimalNavigation  
